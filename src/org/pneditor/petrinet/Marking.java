@@ -157,7 +157,31 @@ public class Marking {
                                 break;
                             }
                         }
-                                                
+
+                        if(transition.getCondition() != null) {
+                            String[] split = transition.getCondition().split(" ");
+                            if(split.length == 2) {
+                                String cond = split[0];
+                                int count = Integer.parseInt(split[1]);
+                                int tokens = getTokens(arc.getPlaceNode());
+                                
+                                isEnabled = false;
+                                
+                                if(cond.equals("<") && tokens < count) {
+                                    isEnabled = true;    
+                                } else if(cond.equals("<=") && tokens <= count) {
+                                    isEnabled = true;    
+                                } else if(cond.equals(">") && tokens > count) {
+                                    isEnabled = true;    
+                                } else if(cond.equals(">=") && tokens >= count) {
+                                    isEnabled = true;    
+                                } else if((cond.equals("==") || cond.equals("=")) && tokens == count) {
+                                    isEnabled = true;    
+                                }
+                                break;
+                            }
+                        }
+                        
                         if(arc.getCondition() != null) {
                             String[] split = arc.getCondition().split(" ");
                             if(split.length == 2) {

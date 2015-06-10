@@ -27,4 +27,6 @@ public class XmlTransition extends XmlNode {
     @XmlElement(name = "label")
     public String label;
 
+    @XmlElement(name = "condition")
+    public String condition;
 }

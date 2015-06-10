@@ -198,6 +198,7 @@ public class DocumentImporter {
         Transition transition = new Transition();
         transition.setId(xmlTransition.id);
         transition.setLabel(xmlTransition.label);
+        transition.setCondition(xmlTransition.condition);
         transition.setCenter(xmlTransition.x, xmlTransition.y);
         return transition;
     }

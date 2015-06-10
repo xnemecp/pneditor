@@ -29,6 +29,8 @@ import org.pneditor.util.GraphicsTools.VerticalAlignment;
  */
 public class Transition extends TransitionNode implements Cloneable {
 
+    private String condition = null;
+    
     @Override
     public void draw(Graphics g, DrawingOptions drawingOptions) {
         g.setColor(Color.white);
@@ -45,5 +47,22 @@ public class Transition extends TransitionNode implements Cloneable {
             GraphicsTools.drawString(g, getLabel(), getCenter().x, getEnd().y, HorizontalAlignment.center, VerticalAlignment.top);
         }
 //		GraphicsTools.drawString(g, getId(), getCenter().x, getStart().y, HorizontalAlignment.center, VerticalAlignment.bottom);
+        
+        if(condition != null && !condition.isEmpty()) {
+            String condStr = "";
+            if(!condition.isEmpty())
+                condStr = "[" + condition + "]";
+                GraphicsTools.drawString(g, condStr, getCenter().x, getEnd().y-40, HorizontalAlignment.center, VerticalAlignment.bottom);
+            }
     }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
+    
+    
 }

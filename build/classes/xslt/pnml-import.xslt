@@ -39,6 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <x><xsl:value-of select="graphics/position/@x"/></x>
                 <y><xsl:value-of select="graphics/position/@y"/></y>
                 <label><xsl:value-of select="name/value"/></label>
+                <condition><xsl:value-of select="condition/cvalue"/></condition>
             </transition>
         </xsl:for-each>
         <xsl:for-each select="pnml/net/arc">

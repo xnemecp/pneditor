@@ -318,6 +318,7 @@ public class RootPflow implements Root, WindowListener, ListSelectionListener, S
     //per application
     protected JToggleButton select, place, transition, arc, token;
     protected Action setLabel, setTokens, setArcMultiplicity, setArcInhibitory, setArcCondition, setArcReset, delete;
+    protected Action setTransitionCondition;
     protected Action setPlaceStatic;
     protected Action addSelectedTransitionsToSelectedRoles;
     protected Action removeSelectedTransitionsFromSelectedRoles;
@@ -389,6 +390,7 @@ public class RootPflow implements Root, WindowListener, ListSelectionListener, S
         setArcReset.setEnabled(isPtoT);
         setTokens.setEnabled(isPlaceNode);
         setLabel.setEnabled(isPlaceNode || isTransitionNode);
+        setTransitionCondition.setEnabled(isTransitionNode);
         addSelectedTransitionsToSelectedRoles.setEnabled((isTransitionNode || areTransitionNodes) && roleSelected);
         removeSelectedTransitionsFromSelectedRoles.setEnabled((isTransitionNode || areTransitionNodes) && roleSelected);
         convertTransitionToSubnet.setEnabled(isTransition || areTransitions || isSubnet || areSubnets);
@@ -493,6 +495,7 @@ public class RootPflow implements Root, WindowListener, ListSelectionListener, S
         setArcCondition = new SetArcConditionAction(this);
         setArcInhibitory = new SetArcInhibitoryAction(this);
         setArcReset = new SetArcResetAction(this);
+        setTransitionCondition = new SetTransitionConditionAction(this);
         addSelectedTransitionsToSelectedRoles = new AddSelectedTransitionsToSelectedRolesAction(this);
         removeSelectedTransitionsFromSelectedRoles = new RemoveSelectedTransitionsFromSelectedRolesAction(this);
         convertTransitionToSubnet = new ConvertTransitionToSubnetAction(this);
@@ -655,6 +658,7 @@ public class RootPflow implements Root, WindowListener, ListSelectionListener, S
 
         transitionPopup = new JPopupMenu();
         transitionPopup.add(setLabel);
+        transitionPopup.add(setTransitionCondition);
         transitionPopup.add(convertTransitionToSubnet);
         transitionPopup.add(addSelectedTransitionsToSelectedRoles);
         transitionPopup.add(removeSelectedTransitionsFromSelectedRoles);

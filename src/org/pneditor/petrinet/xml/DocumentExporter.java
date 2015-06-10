@@ -142,6 +142,7 @@ public class DocumentExporter {
         xmlTransition.x = transition.getCenter().x;
         xmlTransition.y = transition.getCenter().y;
         xmlTransition.label = transition.getLabel();
+        xmlTransition.condition = transition.getCondition();
         return xmlTransition;
     }
 
