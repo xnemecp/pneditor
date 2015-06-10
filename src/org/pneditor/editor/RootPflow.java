@@ -627,7 +627,7 @@ public class RootPflow implements Root, WindowListener, ListSelectionListener, S
         elementMenu.add(setPlaceStatic);
         elementMenu.addSeparator();
         elementMenu.add(setArcMultiplicity);
-        elementMenu.add(setArcCondition);
+        //elementMenu.add(setArcCondition);
         elementMenu.add(setArcInhibitory);
         elementMenu.add(setArcReset);
 
@@ -688,18 +688,11 @@ public class RootPflow implements Root, WindowListener, ListSelectionListener, S
 
         arcEdgePopup = new JPopupMenu();
         arcEdgePopup.add(setArcMultiplicity);
-        arcEdgePopup.add(setArcCondition);
+        //arcEdgePopup.add(setArcCondition);
         arcEdgePopup.add(setArcInhibitory);
         arcEdgePopup.add(setArcReset);
 
         arcEdgePopup.add(delete);
-
-        arcEdgePopupNoCondition = new JPopupMenu();
-        arcEdgePopupNoCondition.add(setArcMultiplicity);
-        arcEdgePopupNoCondition.add(setArcInhibitory);
-        arcEdgePopupNoCondition.add(setArcReset);
-
-        arcEdgePopupNoCondition.add(delete);
         
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, true);
         splitPane.setDividerSize(6);

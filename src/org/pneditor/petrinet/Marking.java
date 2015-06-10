@@ -17,6 +17,7 @@
 package org.pneditor.petrinet;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -158,10 +159,110 @@ public class Marking {
                             }
                         }
 
-                        if(transition.getCondition() != null) {
-                            String[] split = transition.getCondition().split(" ");
+                        String cond = transition.getCondition();
+                        if(cond != null) {
+                            
+                            if(cond.contains("||")) {
+                                String[] split = cond.split("\\|\\|");
+                                boolean left = false, right = false;
+                                
+                                String[] split2 = split[0].trim().split(" ");
+                                String[] split3 = split[1].trim().split(" ");
+                                System.out.println(Arrays.toString(split) + " " + Arrays.toString(split2) + " " + Arrays.toString(split3));
+                                cond = split2[0];
+                                int count = Integer.parseInt(split2[1]);
+                                int tokens = getTokens(arc.getPlaceNode());
+                                
+                                isEnabled = false;
+                                
+                                if(cond.equals("<") && tokens < count) {
+                                    left = true;    
+                                } else if(cond.equals("<=") && tokens <= count) {
+                                    left = true;    
+                                } else if(cond.equals(">") && tokens > count) {
+                                    left = true;    
+                                } else if(cond.equals(">=") && tokens >= count) {
+                                    left = true;    
+                                } else if((cond.equals("==") || cond.equals("=")) && tokens == count) {
+                                    left = true;    
+                                }
+                              
+                                cond = split3[0];
+                                System.out.println(split3[1]);
+                                count = Integer.parseInt(split3[1]);
+                                
+                                isEnabled = false;
+                                
+                                if(cond.equals("<") && tokens < count) {
+                                    right = true;    
+                                } else if(cond.equals("<=") && tokens <= count) {
+                                    right = true;    
+                                } else if(cond.equals(">") && tokens > count) {
+                                    right = true;    
+                                } else if(cond.equals(">=") && tokens >= count) {
+                                    right = true;    
+                                } else if((cond.equals("==") || cond.equals("=")) && tokens == count) {
+                                    right = true;    
+                                }
+                                
+                                if(left || right) {
+                                    isEnabled = true;
+                                } else {
+                                    isEnabled = false;
+                                }
+                                
+                            } else if(cond.contains("&&")) {
+                                String[] split = cond.split("&&");
+                                boolean left = false, right = false;
+                                
+                                String[] split2 = split[0].trim().split(" ");
+                                String[] split3 = split[1].trim().split(" ");
+                                System.out.println(Arrays.toString(split) + " " + Arrays.toString(split2) + " " + Arrays.toString(split3));
+                                cond = split2[0];
+                                int count = Integer.parseInt(split2[1]);
+                                int tokens = getTokens(arc.getPlaceNode());
+                                
+                                isEnabled = false;
+                                
+                                if(cond.equals("<") && tokens < count) {
+                                    left = true;    
+                                } else if(cond.equals("<=") && tokens <= count) {
+                                    left = true;    
+                                } else if(cond.equals(">") && tokens > count) {
+                                    left = true;    
+                                } else if(cond.equals(">=") && tokens >= count) {
+                                    left = true;    
+                                } else if((cond.equals("==") || cond.equals("=")) && tokens == count) {
+                                    left = true;    
+                                }
+                              
+                                cond = split3[0];
+                                System.out.println(split3[1]);
+                                count = Integer.parseInt(split3[1]);
+                                
+                                isEnabled = false;
+                                
+                                if(cond.equals("<") && tokens < count) {
+                                    right = true;    
+                                } else if(cond.equals("<=") && tokens <= count) {
+                                    right = true;    
+                                } else if(cond.equals(">") && tokens > count) {
+                                    right = true;    
+                                } else if(cond.equals(">=") && tokens >= count) {
+                                    right = true;    
+                                } else if((cond.equals("==") || cond.equals("=")) && tokens == count) {
+                                    right = true;    
+                                }
+                                
+                                if(left && right) {
+                                    isEnabled = true;
+                                } else {
+                                    isEnabled = false;
+                                }
+                            } else {
+                                String[] split = transition.getCondition().split(" ");
                             if(split.length == 2) {
-                                String cond = split[0];
+                                cond = split[0];
                                 int count = Integer.parseInt(split[1]);
                                 int tokens = getTokens(arc.getPlaceNode());
                                 
@@ -180,8 +281,12 @@ public class Marking {
                                 }
                                 break;
                             }
+                            }
+                            
+                            
                         }
                         
+                        /*
                         if(arc.getCondition() != null) {
                             String[] split = arc.getCondition().split(" ");
                             if(split.length == 2) {
@@ -206,6 +311,7 @@ public class Marking {
                                 break;
                             }
                         }
+                        */
                     }
                 }
             }
