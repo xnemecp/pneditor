@@ -3,25 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/petrinet/PlaceNode.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/petrinet/Arc.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/editor/actions/SetArcConditionAction.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/petrinet/Marking.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/editor/PNEditor.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/editor/actions/AboutAction.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/editor/actions/SetArcResetAction.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/petrinet/Element.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/editor/Root.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/petrinet/ArcEdge.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/editor/RootPflow.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/petrinet/Edge.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/editor/RootPnml.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/editor/canvas/PopupMenuFeature.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/editor/actions/SelectAllAction.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/editor/commands/SetArcConditionCommand.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/editor/actions/SelectionSelectToolAction.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/org/pneditor/petrinet/Node.java</file>
-            <file>file:/D:/FEI-ING/asus/cpn/pneditor/src/xslt/load.xslt</file>
+            <file>file:/D:/FEI-ING/asus/cpn/project/pneditor/src/org/pneditor/petrinet/Arc.java</file>
+            <file>file:/D:/FEI-ING/asus/cpn/project/pneditor/src/org/pneditor/editor/canvas/PopupMenuFeature.java</file>
+            <file>file:/D:/FEI-ING/asus/cpn/project/pneditor/src/org/pneditor/petrinet/Marking.java</file>
         </group>
     </open-files>
 </project-private>
