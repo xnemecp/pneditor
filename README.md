@@ -1,8 +1,16 @@
 # asus - pneditor
 
-- netbeans project
+Autori: Bc. Pavol Nemec, Bc. Patrik Novotný, Bc. Matúš Svítek 
 
-package org.pneditor.petrinet
-- Marking.java - vo funkcii isEnabled() je kontrola spustitelnosti zadanej podmienky
-  - arc.getCondition() - vrati string s podmienkou
-  - pravy klik na hranu - set arc condition: zatial funguje "< 5", "<= 5", "> 5", ">= 5", "= 5", "== 5"
+Návod:
+- pravy klik na prechod(Transition) 
+- Set transition condition
+- Ukážky:
+	- "< 5", "<= 5"
+	- "> 5", ">= 5"
+	- "= 5", "== 5"
+	- "> 2 && <= 5"
+	- "< 5 || > 8"
+
+
+

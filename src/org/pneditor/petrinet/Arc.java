@@ -95,16 +95,6 @@ public class Arc extends ArcEdge implements Cloneable {
     public void draw(Graphics g, DrawingOptions drawingOptions) {
         this.color = Color.BLACK;
         
-        /*
-        if(isSoureNodePlace == 1) {            
-            this.color = new Color(255, 0, 0);
-        } else if(isSoureNodePlace == 0) {
-            this.color = new Color(0, 0, 255);
-        } else {
-            this.color = new Color(255, 0, 255);
-        }
-        */
-        
         g.setColor(this.color);
         drawSegmentedLine(g);
         Point arrowTip = computeArrowTipPoint();

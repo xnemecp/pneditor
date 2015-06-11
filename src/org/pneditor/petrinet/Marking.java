@@ -261,26 +261,27 @@ public class Marking {
                                 }
                             } else {
                                 String[] split = transition.getCondition().split(" ");
-                            if(split.length == 2) {
-                                cond = split[0];
-                                int count = Integer.parseInt(split[1]);
-                                int tokens = getTokens(arc.getPlaceNode());
                                 
-                                isEnabled = false;
-                                
-                                if(cond.equals("<") && tokens < count) {
-                                    isEnabled = true;    
-                                } else if(cond.equals("<=") && tokens <= count) {
-                                    isEnabled = true;    
-                                } else if(cond.equals(">") && tokens > count) {
-                                    isEnabled = true;    
-                                } else if(cond.equals(">=") && tokens >= count) {
-                                    isEnabled = true;    
-                                } else if((cond.equals("==") || cond.equals("=")) && tokens == count) {
-                                    isEnabled = true;    
+                                if(split.length == 2) {
+                                    cond = split[0];
+                                    int count = Integer.parseInt(split[1]);
+                                    int tokens = getTokens(arc.getPlaceNode());
+
+                                    isEnabled = false;
+
+                                    if(cond.equals("<") && tokens < count) {
+                                        isEnabled = true;    
+                                    } else if(cond.equals("<=") && tokens <= count) {
+                                        isEnabled = true;    
+                                    } else if(cond.equals(">") && tokens > count) {
+                                        isEnabled = true;    
+                                    } else if(cond.equals(">=") && tokens >= count) {
+                                        isEnabled = true;    
+                                    } else if((cond.equals("==") || cond.equals("=")) && tokens == count) {
+                                        isEnabled = true;    
+                                    }
+                                    break;
                                 }
-                                break;
-                            }
                             }
                             
                             
